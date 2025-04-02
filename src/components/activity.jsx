@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { signUp, login, logout } from "../servies/auth";
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react';
+import ProfileCard from './profileCard';
 
 
 function Activity() {
@@ -18,7 +18,9 @@ function Activity() {
     </SignedOut>
 
     <SignedIn>
-      
+      {/* <ProfileCard /> */}
+      <p> you are Signed In</p>
+      <SignOutButton />
     </SignedIn>
     <Footer />
     </>

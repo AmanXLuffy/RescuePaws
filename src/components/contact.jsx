@@ -77,7 +77,7 @@ import Footer from "./footer";
 import joinVideo from "../assets/animal4.mp4";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "",area: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "",area: "", message: "", phone: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -92,7 +92,7 @@ const Contact = () => {
     });
     const result = await response.json();
     alert(result.message);
-    setFormData({ name: "", email: "", area: "", message: "" });
+    setFormData({ name: "", email: "", area: "", message: "", phone: "" }); // Reset form data after submission
   };
 
   return (
