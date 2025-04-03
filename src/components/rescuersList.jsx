@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Hamster from '../animation/hamster';
 // import { data } from 'react-router-dom';
 
 const RescuersList = () => {
@@ -18,7 +19,7 @@ const RescuersList = () => {
         });
     },[]);
     
-    if(loading) return<p className='text-3xl font-semibold'>loading rescuers!!!Please wait....</p>;
+    if(loading) return<p className='text-3xl font-semibold'>loading rescuers!!!Please wait.... <Hamster /></p>;
 
     return(
         <div>

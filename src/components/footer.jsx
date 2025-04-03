@@ -82,7 +82,7 @@ const Footer = () => {
             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/'>Home</Link>
             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/activity'>Activity</Link>
             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/rescue'>Rescue</Link>
-            <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/tips'>Do's & Don'ts</Link>
+            <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/tips'>AnimalFacts</Link>
             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:underline hover:opacity-100' to='/contact'>Join Us</Link>
           </ul>
         </div>

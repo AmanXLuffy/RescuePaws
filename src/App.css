@@ -288,7 +288,722 @@
 
 
 
+/* hamster animation */
+/* From Uiverse.io by Nawsome */ 
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  left: 650px;
+  width: 12em;
+  height: 12em;
+  font-size: 18px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(40deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
 
 
 
 
+/* bear animation */
+/* From Uiverse.io by Emmaline-ozi */ 
+.main {
+  position: absolute;
+  width: 22.5vmax;
+  height: 11.5vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leg {
+  position: absolute;
+  bottom: 0;
+  width: 2vmax;
+  height: 2.125vmax;
+}
+
+.paw {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 1.95vmax;
+  height: 1.8vmax;
+  overflow: hidden;
+}
+
+.paw::before {
+  content: "";
+  position: absolute;
+  width: 5vmax;
+  height: 3vmax;
+  border-radius: 50%;
+}
+
+.top {
+  position: absolute;
+  bottom: 0;
+  left: 0.75vmax;
+  height: 4.5vmax;
+  width: 2.625vmax;
+  border-top-left-radius: 1.425vmax;
+  border-top-right-radius: 1.425vmax;
+  transform-origin: bottom right;
+  transform: rotateZ(90deg) translateX(-0.1vmax) translateY(1.5vmax);
+  z-index: -1;
+  background-image: linear-gradient(70deg, transparent 20%, #deac80 20%);
+}
+
+.dog {
+  position: relative;
+  width: 20vmax;
+  height: 8vmax;
+}
+
+.dog::before {
+  content: "";
+  position: absolute;
+  bottom: -0.75vmax;
+  right: -0.15vmax;
+  width: 100%;
+  height: 1.5vmax;
+  background-color: #b5c18e;
+  border-radius: 50%;
+  z-index: -1000;
+  animation: shadow 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__head {
+  position: absolute;
+  left: 4.5vmax;
+  bottom: 0;
+  width: 8vmax;
+  height: 5vmax;
+  border-top-left-radius: 4.05vmax;
+  border-top-right-radius: 4.05vmax;
+  border-bottom-right-radius: 3.3vmax;
+  border-bottom-left-radius: 3.3vmax;
+  background-color: #deac80;
+  animation: head 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__head-c {
+  position: absolute;
+  left: 1.5vmax;
+  bottom: 0;
+  width: 9.75vmax;
+  height: 8.25vmax;
+  animation: head 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+  z-index: -1;
+}
+
+.dog__snout {
+  position: absolute;
+  left: -1.5vmax;
+  bottom: 0;
+  width: 7.5vmax;
+  height: 3.75vmax;
+  border-top-right-radius: 3vmax;
+  border-bottom-right-radius: 3vmax;
+  border-bottom-left-radius: 4.5vmax;
+  background-color: #f7dcb9;
+  animation: snout 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__snout::before {
+  content: "";
+  position: absolute;
+  left: -0.1125vmax;
+  top: -0.15vmax;
+  width: 1.875vmax;
+  height: 1.125vmax;
+  border-top-right-radius: 3vmax;
+  border-bottom-right-radius: 3vmax;
+  border-bottom-left-radius: 4.5vmax;
+  background-color: #6c4e31;
+  animation: snout-b 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__nose {
+  position: absolute;
+  top: -1.95vmax;
+  left: 40%;
+  width: 0.75vmax;
+  height: 2.4vmax;
+  border-radius: 0.525vmax;
+  transform-origin: bottom;
+  transform: rotateZ(10deg);
+  background-color: #d7dbd2;
+}
+
+.dog__eye-l,
+.dog__eye-r {
+  position: absolute;
+  top: -0.9vmax;
+  width: 0.675vmax;
+  height: 0.375vmax;
+  border-radius: 50%;
+  background-color: #1c3130;
+  animation: eye 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__eye-l {
+  left: 27%;
+}
+
+.dog__eye-r {
+  left: 65%;
+}
+
+.dog__ear-l,
+.dog__ear-r {
+  position: absolute;
+  width: 5vmax;
+  height: 3.3vmax;
+  border-top-left-radius: 3.3vmax;
+  border-top-right-radius: 3vmax;
+  border-bottom-right-radius: 5vmax;
+  border-bottom-left-radius: 5vmax;
+  background-color: #deac80;
+}
+
+.dog__ear-l {
+  top: 1.5vmax;
+  left: 10vmax;
+  transform-origin: bottom left;
+  transform: rotateZ(-50deg);
+  z-index: -1;
+  animation: ear-l 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__ear-r {
+  top: 1.5vmax;
+  right: 3vmax;
+  transform-origin: bottom right;
+  transform: rotateZ(25deg);
+  z-index: -2;
+  animation: ear-r 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0.3vmax;
+  left: 6vmax;
+  width: 18vmax;
+  height: 4vmax;
+  border-top-left-radius: 3vmax;
+  border-top-right-radius: 6vmax;
+  border-bottom-right-radius: 1.5vmax;
+  border-bottom-left-radius: 6vmax;
+  background-color: #914f1e;
+  z-index: -2;
+  animation: body 10s cubic-bezier(0.3, 0.41, 0.18, 1.01) infinite;
+}
+
+.dog__tail {
+  position: absolute;
+  top: 20px;
+  right: -1.5vmax;
+  height: 3vmax;
+  width: 4vmax;
+  background-color: #914f1e;
+  border-radius: 1.5vmax;
+}
+
+.dog__paws {
+  position: absolute;
+  bottom: 0;
+  left: 7.5vmax;
+  width: 10vmax;
+  height: 3vmax;
+}
+
+.dog__bl-leg {
+  left: -3vmax;
+  z-index: -10;
+}
+
+.dog__bl-paw::before {
+  background-color: #fffbe6;
+}
+
+.dog__bl-top {
+  background-image: linear-gradient(80deg, transparent 20%, #deac80 20%);
+}
+
+.dog__fl-leg {
+  z-index: 10;
+  left: 0;
+}
+
+.dog__fl-paw::before {
+  background-color: #fffbe6;
+}
+
+.dog__fr-leg {
+  right: 0;
+}
+
+.dog__fr-paw::before {
+  background-color: #fffbe6;
+}
+
+/*==============================*/
+
+@keyframes head {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  90%,
+  100% {
+    height: 8.25vmax;
+    bottom: 0;
+    transform-origin: bottom right;
+    transform: rotateZ(0);
+  }
+  5%,
+  15%,
+  22%,
+  24%,
+  30% {
+    height: 8.1vmax;
+  }
+  32%,
+  50% {
+    height: 8.25vmax;
+  }
+  55%,
+  60% {
+    bottom: 0.75vmax;
+    transform-origin: bottom right;
+    transform: rotateZ(0);
+  }
+  70%,
+  80% {
+    bottom: 0.75vmax;
+    transform-origin: bottom right;
+    transform: rotateZ(10deg);
+  }
+}
+
+@keyframes body {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  32%,
+  100% {
+    height: 7.2vmax;
+  }
+  5%,
+  15%,
+  22%,
+  24%,
+  30% {
+    height: 7.05vmax;
+  }
+}
+
+@keyframes ear-l {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  82%,
+  100% {
+    transform: rotateZ(-50deg);
+  }
+  5%,
+  15%,
+  22%,
+  24% {
+    transform: rotateZ(-48deg);
+  }
+  30%,
+  31% {
+    transform: rotateZ(-30deg);
+  }
+  32%,
+  80% {
+    transform: rotateZ(-60deg);
+  }
+}
+
+@keyframes ear-r {
+  0%,
+  10%,
+  20%,
+  26%,
+  28% {
+    transform: rotateZ(20deg);
+  }
+  5%,
+  15%,
+  22%,
+  24% {
+    transform: rotateZ(18deg);
+  }
+  30%,
+  31% {
+    transform: rotateZ(10deg);
+  }
+  32% {
+    transform: rotateZ(25deg);
+  }
+}
+
+@keyframes snout {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  82%,
+  100% {
+    height: 3.75vmax;
+  }
+  5%,
+  15%,
+  22%,
+  24% {
+    height: 3.45vmax;
+  }
+}
+
+@keyframes snout-b {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  98%,
+  100% {
+    width: 1.875vmax;
+  }
+  5%,
+  15%,
+  22%,
+  24% {
+    width: 1.8vmax;
+  }
+  34%,
+  98% {
+    width: 1.275vmax;
+  }
+}
+
+@keyframes shadow {
+  0%,
+  10%,
+  20%,
+  26%,
+  28%,
+  30%,
+  84%,
+  100% {
+    width: 99%;
+  }
+  5%,
+  15%,
+  22%,
+  24% {
+    width: 101%;
+  }
+  34%,
+  81% {
+    width: 96%;
+  }
+}
+
+@keyframes eye {
+  0%,
+  30% {
+    width: 0.675vmax;
+    height: 0.3vmax;
+  }
+  32%,
+  59%,
+  90%,
+  100% {
+    width: 0.525vmax;
+    height: 0.525vmax;
+    transform: translateY(0);
+  }
+  60%,
+  75% {
+    transform: translateY(-0.3vmax);
+  }
+  80%,
+  85% {
+    transform: translateY(0.15vmax);
+  }
+}

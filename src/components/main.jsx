@@ -4,6 +4,7 @@ import video2 from "../assets/animal2.mp4";
 import video3 from "../assets/animal3.mp4";
 import video4 from "../assets/animal5.mp4";
 import { motion } from "framer-motion";
+import Bear from "../animation/bear";
 
 const Main = () => {
 
@@ -39,6 +40,7 @@ const Main = () => {
        transition={{duration: 0.7}}
       className="flex flex-col md:flex-row w-full items-center md:h-[300px] border-t border-b border-orange-600 py-10"
       >
+        {/* <Bear /> */}
         <div className="w-full md:w-[500px] border-b  md:border-b-0 md:border-r border-orange-600 pb-4 md:pb-0">
           <p className="text-3xl md:text-5xl text-center font-semibold text-slate-600">OUR MISSION</p>
         </div>
@@ -48,6 +50,8 @@ const Main = () => {
           </p>
         </div>
       </motion.div>
+          
+          <Bear />
 
       <motion.div
         variants={variants1}
@@ -56,6 +60,7 @@ const Main = () => {
         transition={{duration: 0.7}}
         className="max-w-[1250px] w-full flex flex-col md:flex-row items-center text-lg md:text-xl border-2 border-gray-500 rounded-2xl p-4 md:p-8 min-h-[400px]"
       >
+        
         <div className="w-full md:w-1/2 flex justify-center">
           <video autoPlay muted loop className="w-full h-auto rounded-lg">
             <source src={video4} type="video/mp4" />

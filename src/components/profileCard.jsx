@@ -1,5 +1,4 @@
 import React from 'react'
-import Profile from './profile'
 import dog from '../assets/dog.jpg';
 
 
