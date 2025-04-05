@@ -10,6 +10,7 @@ function Activity() {
   return (
     <>
     <Navbar />
+
     <SignedOut>
     <div className='w-full h-screen relative'>
       <p className='text-center text-3xl'>YOU NEED TO SIGNUP DUDE</p>
@@ -17,11 +18,6 @@ function Activity() {
     </div>
     </SignedOut>
 
-    <SignedIn>
-      {/* <ProfileCard /> */}
-      <p> you are Signed In</p>
-      <SignOutButton />
-    </SignedIn>
     <Footer />
     </>
   );

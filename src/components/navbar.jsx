@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState } from 'react';
 import { BsX, BsMenuButton,} from 'react-icons/bs';
+import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react';
 import { GiPlagueDoctorProfile } from "react-icons/gi";
 import logo from '../assets/newLogo.jpg';
 
@@ -35,22 +36,22 @@ const handleResize = () => {
 
       
       <ul className='hidden md:flex gap-6 md:gap-16 text-sm md:text-lg'> 
-        {/* <a href='#home' className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100'><li>Home</li></a> */}
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/'>Home</Link>
 
-       {/* <a href='#rescue' className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100'><li>Rescue</li></a> */}
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/rescue'>Rescue</Link>
 
-        {/* <a href='#tips' className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100'><li>Do's&Don'ts</li></a> */}
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/tips'>AnimalsFacts</Link>
 
-          {/* <a href='#contact' className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100'><li>Contactus</li></a> */}
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/contact'>Joinus</Link>
 
-        {/* <a href='#activity' className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100'><li>Activities</li></a> */}
+        <SignedOut>
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>SignUp</Link>
+        </SignedOut>
 
-        <Link className='cursor-pointer text-3xl text-green-400 opacity-80 transition-all duration-300 hover:scale-125 hover:opacity-100' to='/profile'><GiPlagueDoctorProfile /> </Link>
+        <SignedIn>
+        <SignOutButton />
+        <Link className='cursor-pointer text-3xl text-green-400 opacity-80 transition-all duration-300 hover:scale-125 hover:opacity-100' to='/profile'><GiPlagueDoctorProfile /></Link>
+        </SignedIn>
 
       </ul>
 
