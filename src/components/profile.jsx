@@ -3,7 +3,8 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import dog from '../assets/dog.jpg';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-import ProfileCard from "./profileCard";
+import ProfileCard from "./profileCard1";
+import ProfileCard2 from "./profilecard2";
 
 
 const Profile = () => {
@@ -16,7 +17,8 @@ const Profile = () => {
       </SignedOut>
 
       <SignedIn>
-        <ProfileCard /> 
+        {/* <ProfileCard />  */}
+        <ProfileCard2 />
       </SignedIn>
       <Footer />
     </>

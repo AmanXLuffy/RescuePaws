@@ -14,7 +14,8 @@ const tips = () => {
     'https://media.istockphoto.com/id/860992046/photo/taking-care-of-a-baby-roe-deer-wildlife-rescue.jpg?s=612x612&w=0&k=20&c=M_jyXw-dePO2ZeqLMJF7hOQJb-FpasUj2uGfRjukvMw=',
     'https://media.istockphoto.com/id/1351910691/video/a-rabbit-is-sniffing-burnt-out-plants-in-the-forest.jpg?s=640x640&k=20&c=DoufLYOQr_MQp7uAduJnEPko2Frj93rBnVR8eolaVNk=',
     'https://media.istockphoto.com/id/1138129452/photo/bornean-orangutan-at-semenggoh-nature-reserve-and-wildlife-rehabilitation-centre.jpg?s=2048x2048&w=is&k=20&c=ABj6xXpj5loyofIjhmXvrihIOmnzQ12Hux5T1PaAQtM=',
-    'https://media.istockphoto.com/id/957283094/photo/baby-rabbit-eating-with-baby-bottle.jpg?s=612x612&w=0&k=20&c=wJ_aJHRd8f78PYeWlMT7xy9B5OGrO4DItgH7QEJupwI='
+    'https://media.istockphoto.com/id/957283094/photo/baby-rabbit-eating-with-baby-bottle.jpg?s=612x612&w=0&k=20&c=wJ_aJHRd8f78PYeWlMT7xy9B5OGrO4DItgH7QEJupwI=',
+    'https://images.pexels.com/photos/12195433/pexels-photo-12195433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2+'
   ];
   
   return (
@@ -23,8 +24,9 @@ const tips = () => {
       <Navbar />
       <div className='h-screen w-full relative '>
 
-        <Facts />
       <Carousel images={images} />
+      
+        <Facts />
       </div>
       <Footer />
     </div>

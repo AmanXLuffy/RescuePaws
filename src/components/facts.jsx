@@ -51,7 +51,7 @@ function Facts() {
 
   return (
     <div className="px-4 ">
-      <p className="text-center font-semibold text-2xl">Animal Info:</p>
+      <p className="text-center font-semibold text-2xl">Animal Facts:</p>
       {animalData.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
           {animalData.map((animal, index) => (

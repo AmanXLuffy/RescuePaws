@@ -45,7 +45,7 @@ const handleResize = () => {
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/contact'>Joinus</Link>
 
         <SignedOut>
-        <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>SignUp</Link>
+        <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signup</Link>
         </SignedOut>
 
         <SignedIn>
@@ -69,7 +69,7 @@ const handleResize = () => {
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/rescue'>Rescue</Link>
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/tips'>AnimalFacts</Link>
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/contact'>Joinus</Link>
-             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>SignIn</Link>
+             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signup</Link>
              
             </ul>
           </div>
