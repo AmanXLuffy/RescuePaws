@@ -177,7 +177,7 @@ const ProfileCard = () => {
     const fetchUserData = async () => {
       if (user?.primaryEmailAddress?.emailAddress) {
         try {
-          const response = await fetch("http://localhost/rescuepaws/api/get_user_info.php", {
+          const response = await fetch("http://localhost/RescuePaws/profileInfo.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -233,7 +233,7 @@ const ProfileCard = () => {
         </div>
 
         <div className="inline-block border-2 pl-5 rounded-md border-gray-300 ml-12 absolute top-5 h-[350px] w-[800px]">
-          <p className="text-2xl font-semibold">{formData.name}</p>
+          <p className="text-2xl font-semibold">Name{formData.name}</p>
           <p className="text-blue-700">Volunteer/Developer</p>
 
           <div className="mt-6 text-lg space-y-3">
