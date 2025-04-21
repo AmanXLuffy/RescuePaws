@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react';
-import ProfileCard from './profileCard1';
+import ProfileCard from '../profile/profileCard1';
 
 
 function Activity() {

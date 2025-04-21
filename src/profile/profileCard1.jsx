@@ -2,7 +2,6 @@ import React from "react";
 import dog from "../assets/dog.jpg";
 import {SignedIn,SignedOut,SignInButton,SignOutButton} from "@clerk/clerk-react";
 import { useState, useEffect } from "react";
-import Hamster from "../animation/hamster";
 
 const ProfileCard = () => {
 const [formData,setFormData] = useState({
@@ -53,7 +52,7 @@ const handleSubmit = (e) => {
           </div>
 
           <div className="inline-block border-2 pl-5 rounded-md border-gray-300 ml-12 absolute top-5 h-[350px] w-[800px]">
-            <p className="text-2xl">Aman Solanki</p>
+            <p className="text-2xl"> Aman Solanki </p>
             <p className="text-blue-700">Volunteer/Developer</p>
 
             <div className="p-6">
@@ -68,7 +67,7 @@ const handleSubmit = (e) => {
 
               <div className="inline-block">
             <label className="ml-28">Contact</label>
-            <input className="border-2 border-gray-300 rounded-2xl w-[200px] pl-3 h-[40px] mt-4 ml-2 shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" type="text" onChange={handleChange} value={formData.contact} name='contact' placeholder="Contact"></input>
+            <input className="border-2 border-gray-300 rounded-2xl w-[200px] pl-3 h-[40px] mt-4 ml-2 shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" type="text" required onChange={handleChange} value={formData.contact} name='contact' placeholder="Contact"></input>
               </div>
 
               <div className="inline-block">
@@ -105,7 +104,7 @@ const handleSubmit = (e) => {
 
               
               <div className="mt-4">
-          <h2 className="font-bold">Submitted Data:</h2>
+          <h2 className="font-bold">User Data:</h2>
           <p><strong>Name:</strong> {submittedData.name}</p>
           <p><strong>Contact:</strong> {submittedData.contact}</p>
           <p><strong>Address:</strong> {submittedData.address}</p>

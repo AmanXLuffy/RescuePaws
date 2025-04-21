@@ -160,6 +160,8 @@
 import React, { useState, useEffect } from "react";
 import dog from "../assets/dog.jpg";
 import { useUser } from "@clerk/clerk-react";
+// import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react';
+
 
 const ProfileCard = () => {
   const [formData, setFormData] = useState({

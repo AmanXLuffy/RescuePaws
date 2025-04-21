@@ -6,7 +6,7 @@ import Activity from "./components/activity";
 import Rescue from "./components/rescue";
 import Contact from "./components/contact";
 import Tips from "./components/tips";
-import Profile from './components/profile';
+import Profile from './profile/profile';
 
 
 function App() {
