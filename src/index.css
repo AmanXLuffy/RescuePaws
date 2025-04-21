@@ -5,6 +5,11 @@ body {
   /* background-color: rgb(122, 75, 58) */
 }
 
+.input-style {
+  @apply border-2 border-gray-300 rounded-2xl px-3 py-2 w-[250px] shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileForm = ({ formData, handleChange, handleSubmit }) => (
   <form onSubmit={handleSubmit} className="space-y-4">
-    <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap gap-6">
       <div>
         <label>Your Name</label>
         <input
@@ -42,7 +42,7 @@ const ProfileForm = ({ formData, handleChange, handleSubmit }) => (
         />
       </div>
 
-      <div>
+      <div className="ml-7">
         <label>Email</label>
         <input
           type="email"
@@ -67,37 +67,21 @@ const ProfileForm = ({ formData, handleChange, handleSubmit }) => (
         />
       </div>
 
-      <div>
+      <div className="flex flex-row gap-4 ml-7 mt-2">
         <label>Gender</label>
-        <div className="flex gap-4 mt-1">
+        <div className="flex gap-2 h-[25px]">
           <label className="flex items-center">
-            <input
-              type="radio"
-              name="gender"
-              value="male"
-              checked={formData.gender === "male"}
-              onChange={handleChange}
-              className="mr-1"
-            />
-            Male
+            <input type="radio" name="gender" value="male" checked={formData.gender === "male"} onChange={handleChange} className="mr-1" />Male
           </label>
+
+
           <label className="flex items-center">
-            <input
-              type="radio"
-              name="gender"
-              value="female"
-              checked={formData.gender === "female"}
-              onChange={handleChange}
-              className="mr-1"
-            />
-            Female
+            <input type="radio" name="gender" value="female"  checked={formData.gender === "female"}  onChange={handleChange} className="mr-1"/> Female
           </label>
         </div>
       </div>
     </div>
-    <button type="submit" className="mt-6 px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600">
-      Submit
-    </button>
+    <button type="submit" className="mt-8 relative left-[300px] px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600"> Submit </button>
   </form>
 );
 
