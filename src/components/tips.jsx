@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 import Navbar from './navbar';
 import Footer from './footer';
 import Facts from './facts';
 import Carousel from '../animation/carousel';
 
-const tips = () => {
-
+const Tips = () => {
   const images = [
     'https://images.pexels.com/photos/33287/dog-viszla-close.jpg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -17,23 +16,24 @@ const tips = () => {
     'https://media.istockphoto.com/id/957283094/photo/baby-rabbit-eating-with-baby-bottle.jpg?s=612x612&w=0&k=20&c=wJ_aJHRd8f78PYeWlMT7xy9B5OGrO4DItgH7QEJupwI=',
     'https://images.pexels.com/photos/12195433/pexels-photo-12195433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2+'
   ];
-  
+
   return (
-    <div className='flex flex-col '>
-
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className='h-screen w-full relative '>
 
-      <Carousel images={images} />
-      
-        <Facts />
-      </div>
+      <main className="flex-1 flex flex-col items-center justify-center w-full px-4 py-8 bg-gradient-to-b from-blue-100 to-white">
+        <div className="w-full max-w-6xl">
+          <Carousel images={images} />
+        </div>
+
+        <div className="w-full max-w-5xl mt-12 px-4">
+          <Facts />
+        </div>
+      </main>
+
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default tips
-
-
-
+export default Tips;

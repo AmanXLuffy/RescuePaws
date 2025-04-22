@@ -12,24 +12,39 @@ const Carousel = ({ images }) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 7000); // Change image every 7 seconds
+    const interval = setInterval(nextSlide, 5000); // Change image every 5 seconds
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return (
-    <div className="relative w-screen">
-      <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+    <div className="relative w-full overflow-hidden rounded-lg">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
         {images.map((image, index) => (
           <div className="min-w-full" key={index}>
-            <img src={image} alt={`Slide ${index}`} className="w-screen object-contain h-[300px]" />
+            <img
+              src={image}
+              alt={`Slide ${index}`}
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-contain"
+            />
           </div>
         ))}
       </div>
-      <button className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full" onClick={prevSlide}>
-        &#10094; {/* Left arrow */}
+
+      {/* Navigation Buttons */}
+      <button
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition"
+        onClick={prevSlide}
+      >
+        &#10094;
       </button>
-      <button className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full" onClick={nextSlide}>
-        &#10095; {/* Right arrow */}
+      <button
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow-md hover:bg-opacity-90 transition"
+        onClick={nextSlide}
+      >
+        &#10095;
       </button>
     </div>
   );

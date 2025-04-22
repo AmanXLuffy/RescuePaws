@@ -57,19 +57,28 @@ const handleResize = () => {
 
         {isOpen ? (
           <BsX className='block md:hidden text-4xl' onClick={menuOpen}/>
+          
         ) : (
           <BsMenuButton className='block md:hidden text-4xl' onClick={menuOpen} />
         )}
 
         {isOpen && (
-          <div className='fixed right-0 top-[80px] w-[150px] max-w-xs bg-gray-400 bg-opacity-30 h-auto border-l-2 border-gray-500 p-6 rounded-bl-lg shadow-lg'>
+          <div className='fixed right-0 top-[80px] w-[150px] max-w-xs bg-gray-400 bg-opacity-110 h-auto border-l-2 border-gray-500 p-6 rounded-bl-lg shadow-lg'>
             <ul className='flex flex-col text-black gap-4'>
 
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/'>Home</Link>
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/rescue'>Rescue</Link>
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/tips'>AnimalFacts</Link>
              <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/contact'>Joinus</Link>
-             <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signup</Link>
+             
+             <SignedOut>
+                <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signup</Link>
+             </SignedOut>
+
+             <SignedIn>
+               <SignOutButton />
+               <Link className='cursor-pointer text-3xl text-green-400 opacity-80 transition-all duration-300 hover:scale-125 hover:opacity-100' to='/profile'><GiPlagueDoctorProfile /></Link>
+             </SignedIn>
              
             </ul>
           </div>

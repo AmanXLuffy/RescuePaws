@@ -50,30 +50,59 @@ function Facts() {
   }, []);
 
   return (
-    <div className="px-4 ">
-      <p className="text-center font-semibold text-2xl">Animal Facts:</p>
-      {animalData.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
-          {animalData.map((animal, index) => (
-         <a href="https://api-ninjas.com/api/animals" target="blank">  <Card key={index} className="w-full max-w-[300px] md:h-[250px] mx-auto p-10 border-2 border-black rounded-xl shadow-md">
-             <Card.Body>
-                <Card.Title className="text-center text-xl font-bold">
-                  {animal.name}
-                </Card.Title>
-                <Card.Text className="text-sm mt-3">
-                  <p><strong>Weight:</strong> {animal.characteristics?.weight || "N/A"}</p>
-                  <p><strong>Diet:</strong> {animal.characteristics?.diet || "N/A"}</p>
-                  <p><strong>Habitat:</strong> {animal.characteristics?.habitat || "N/A"}</p>
-                  <p><strong>Lifespan:</strong> {animal.characteristics?.lifespan || "N/A"}</p>
-                </Card.Text>
-              </Card.Body> 
-            </Card></a>
-          ))}
-        </div>
-      ) : (
-        <p className="text-center mt-5">Loading data... <Hamster /></p>
-      )}
+    // <div className="px-4 ">
+    //   <p className="text-center font-semibold text-2xl">Animal Facts:</p>
+    //   {animalData.length > 0 ? (
+    //     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
+    //       {animalData.map((animal, index) => (
+    //      <a href="https://api-ninjas.com/api/animals" target="blank">  <Card key={index} className="w-full max-w-[300px] md:h-[250px] mx-auto p-10 border-2 border-black rounded-xl shadow-md">
+    //          <Card.Body>
+    //             <Card.Title className="text-center text-xl font-bold">
+    //               {animal.name}
+    //             </Card.Title>
+    //             <Card.Text className="text-sm mt-3">
+    //               <p><strong>Weight:</strong> {animal.characteristics?.weight || "N/A"}</p>
+    //               <p><strong>Diet:</strong> {animal.characteristics?.diet || "N/A"}</p>
+    //               <p><strong>Habitat:</strong> {animal.characteristics?.habitat || "N/A"}</p>
+    //               <p><strong>Lifespan:</strong> {animal.characteristics?.lifespan || "N/A"}</p>
+    //             </Card.Text>
+    //           </Card.Body> 
+    //         </Card></a>
+    //       ))}
+    //     </div>
+    //   ) : (
+    //     <p className="text-center mt-5">Loading data... <Hamster /></p>
+    //   )}
+    // </div>
+    <div className="container mx-auto px-4">
+  <p className="text-center font-semibold text-2xl">Animal Facts:</p>
+  {animalData.length > 0 ? (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
+      {animalData.map((animal, index) => (
+        <a href="https://api-ninjas.com/api/animals" target="blank" key={index}>
+          <Card className="w-full max-w-[300px] h-full mx-auto p-4 border-2 border-black rounded-xl shadow-md">
+            <Card.Body>
+              <Card.Title className="text-center text-xl font-bold">
+                {animal.name}
+              </Card.Title>
+              <Card.Text className="text-sm mt-3">
+                <p><strong>Weight:</strong> {animal.characteristics?.weight || "N/A"}</p>
+                <p><strong>Diet:</strong> {animal.characteristics?.diet || "N/A"}</p>
+                <p><strong>Habitat:</strong> {animal.characteristics?.habitat || "N/A"}</p>
+                <p><strong>Lifespan:</strong> {animal.characteristics?.lifespan || "N/A"}</p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </a>
+      ))}
     </div>
+  ) : (
+    
+  <p className="text-center mt-5">Loading data... <Hamster  /> </p>
+  
+  )}
+</div>
+
   );
 }
 
