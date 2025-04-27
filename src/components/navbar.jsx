@@ -45,7 +45,7 @@ const handleResize = () => {
         <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/contact'>Joinus</Link>
 
         <SignedOut>
-        <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signup</Link>
+        <Link className='cursor-pointer opacity-80 transition-all duration-300 hover:opacity-100' to='/activity'>Signin</Link>
         </SignedOut>
 
         <SignedIn>

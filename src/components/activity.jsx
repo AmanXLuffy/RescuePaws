@@ -38,7 +38,7 @@ function Activity() {
       <SignedOut>
         <div className="w-full min-h-[80vh] flex flex-col items-center justify-center bg-white px-4 text-center">
           <p className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">
-            YOU NEED TO SIGN UP DUDE
+            YOU NEED TO SIGN IN DUDE
           </p>
           <button className="px-6 py-2 border-2 border-black rounded text-lg hover:bg-black hover:text-white transition-all">
             <SignInButton />
