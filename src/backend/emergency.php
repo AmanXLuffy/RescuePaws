@@ -1,34 +1,77 @@
-<?php  
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+<?php
 
-$conn = new mysqli("localhost", "root", "", "contact_db"); 
+require_once 'vendor/autoload.php'; // Path to Composer's autoloader
 
+use Twilio\Rest\Client;
+
+$sid = 'AC8719cbe7c98790f125d707574dfa7794'; //  Account SID 
+$token = 'd55557a07168b576e4f28aa8f2d3771f';    // Auth Token 
+$twilio_number = '+127076475140'; // Your Twilio number
+
+// Get area from POST request
+$area = $_POST['area'] ?? '';
+$messageText = $_POST['message'] ?? 'Emergency Alert!';
+
+// Check if input is valid
+if (empty($area) || empty($messageText)) {
+    echo json_encode(["status" => "error", "message" => "Area and message are required."]);
+    exit;
+}
+
+// Connect to database
+$conn = new mysqli("localhost", "contact_db", "", "contacts");
+
+// Check DB connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$data = json_decode(file_get_contents("php://input"), true);
+// Fetch phone numbers of rescuers in that area
+$stmt = $conn->prepare("SELECT phone FROM rescuers WHERE area = ?");
+$stmt->bind_param("s", $area);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if ($data) {
-    $name = $conn->real_escape_string($data['name']);
-    $phone = $conn->real_escape_string($data['phone']);
-    $area = $conn->real_escape_string($data['area']);
-    $description = $conn->real_escape_string($data['description']);
+$client = new Client($sid, $token);
 
-    $sql = "INSERT INTO emergency_alert (name, phone, area, description) VALUES ('$name', '$phone','$area','$description')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo json_encode(["success" => true, "message" => "data received successfully"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Error: " . $conn->error]);
+try {
+    while ($row = $result->fetch_assoc()) {
+        $client->messages->create(
+            $row['phone'],
+            [
+                'from' => $twilio_number,
+                'body' => $messageText
+            ]
+        );
     }
-} else {
-    echo json_encode(["success" => false, "message" => "Invalid input"]);
+    echo json_encode(["status" => "success", "message" => "SMS sent to rescuers in $area"]);
+} catch (Exception $e) {
+    echo json_encode(["status" => "error", "message" => "Error sending SMS: " . $e->getMessage()]);
 }
 
-$conn->close(); 
 
+// require_once 'vendor/autoload.php'; // Path to Composer's autoloader
+
+// use Twilio\Rest\Client;
+
+// $sid = 'AC8719cbe7c98790f125d707574dfa7794'; // Account SID
+// $token = 'd55557a07168b576e4f28aa8f2d3771f';  // Auth Token
+// $twilio_number = '+127076475140'; // Your Twilio number
+
+// $client = new Client($sid, $token);
+
+// try {
+//     $client->messages->create(
+//         '+919173515355', // Recipient phone number
+//         [
+//             'from' => $twilio_number,
+//             'body' => 'Test message from Twilio API'
+//         ]
+//     );
+//     echo "Message sent successfully!";
+// } catch (Exception $e) {
+//     echo "Error: " . $e->getMessage();
+// }
 ?>
+
 
