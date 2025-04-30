@@ -1,11 +1,22 @@
 <?php
 
 require_once 'vendor/autoload.php'; // Path to Composer's autoloader
+require_once __DIR__ . '/vendor/autoload.php';  // Autoload Composer dependencies
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 
 use Twilio\Rest\Client;
 
-$sid = 'AC8719cbe7c98790f125d707574dfa7794'; //  Account SID 
-$token = 'd55557a07168b576e4f28aa8f2d3771f';    // Auth Token 
+// $sid = 'AC8719cbe7c98790f125d707574dfa7794'; 
+// $token = 'd55557a07168b576e4f28aa8f2d3771f'; 
+
+$twilioSid = getenv('TWILIO_SID');
+$twilioAuthToken = getenv('TWILIO_AUTH_TOKEN');
+
+
+
 $twilio_number = '+127076475140'; // Your Twilio number
 
 // Get area from POST request
