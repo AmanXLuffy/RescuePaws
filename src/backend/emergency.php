@@ -9,11 +9,9 @@ $dotenv->load();
 
 use Twilio\Rest\Client;
 
-// $sid = 'AC8719cbe7c98790f125d707574dfa7794'; 
-// $token = 'd55557a07168b576e4f28aa8f2d3771f'; 
-
 $twilioSid = getenv('TWILIO_SID');
 $twilioAuthToken = getenv('TWILIO_AUTH_TOKEN');
+
 
 
 
@@ -61,28 +59,4 @@ try {
 }
 
 
-// require_once 'vendor/autoload.php'; // Path to Composer's autoloader
-
-// use Twilio\Rest\Client;
-
-// $sid = 'AC8719cbe7c98790f125d707574dfa7794'; // Account SID
-// $token = 'd55557a07168b576e4f28aa8f2d3771f';  // Auth Token
-// $twilio_number = '+127076475140'; // Your Twilio number
-
-// $client = new Client($sid, $token);
-
-// try {
-//     $client->messages->create(
-//         '+919173515355', // Recipient phone number
-//         [
-//             'from' => $twilio_number,
-//             'body' => 'Test message from Twilio API'
-//         ]
-//     );
-//     echo "Message sent successfully!";
-// } catch (Exception $e) {
-//     echo "Error: " . $e->getMessage();
-// }
 ?>
-
-

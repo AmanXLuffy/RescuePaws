@@ -18,7 +18,7 @@ if ($data) {
     $phone = $conn->real_escape_string($data['phone']);
     $message = $conn->real_escape_string($data['message']);
 
-    $sql = "INSERT INTO contacts (name, email, area, phone, message) VALUES ('$name', '$email','$area','$phone', '$message')";
+    $sql = "INSERT INTO contactss (name, email, area, phone, message) VALUES ('$name', '$email','$area','$phone', '$message')";
 
     if ($conn->query($sql) === TRUE) {
         echo json_encode(["success" => true, "message" => "Message saved successfully"]);
