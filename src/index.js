@@ -11,7 +11,11 @@ import { ClerkProvider } from '@clerk/clerk-react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
+const MONGO_URI = process.env.MONGO_URI;
+
+
 const PUBLISHABLE_KEY = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+console.log('PUBLISHABLE_KEY:', PUBLISHABLE_KEY);
 
 
 root.render(

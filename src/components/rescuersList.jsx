@@ -6,7 +6,7 @@ const RescuersList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost/fetch.php")
+    fetch("http://localhost:5000/api/rescuers")
       .then((response) => response.json())
       .then((data) => {
         setRescuers(data);
