@@ -8,8 +8,7 @@ const volunteerSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
-    match: [/.+@.+\..+/, 'Please enter a valid email address']
+    // match: [/.+@.+\..+/, 'Please enter a valid email address']
   },
   area: {
     type: String,
@@ -18,7 +17,7 @@ const volunteerSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: true,
-    match: [/^\d{10,15}$/, 'Please enter a valid phone number']
+    // match: [/^\d{10,15}$/, 'Please enter a valid phone number']
   },
   message: {
     type: String,
