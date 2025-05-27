@@ -17,25 +17,44 @@ mongoose.connect("mongodb+srv://amansolanki:MxN1efYgP5ybhaz5@cluster0.rmujmia.mo
 
 
   
+// app.post('/api/rescuers', async (req, res) => {
+//   const rescuer = req.body;
+
+//   if (!rescuer.name || !rescuer.email || !rescuer.area || !rescuer.phone || !rescuer.message) {
+//     return res.status(400).json({success:false, message: 'please provide all details' });
+//   }
+
+
+//   const newRescuer = new Volunteer(rescuer)
+//   try {
+//      newRescuer.save();   
+//         res.status(201).json({ success: true, data: newRescuer });
+//   }
+//    catch (error) {
+//     console.error('Error saving rescuer:', error);
+//     res.status(500).json({ success: false, message: 'Internal server error' });
+//    }
+
+// });
+
+
 app.post('/api/rescuers', async (req, res) => {
   const rescuer = req.body;
 
   if (!rescuer.name || !rescuer.email || !rescuer.area || !rescuer.phone || !rescuer.message) {
-    return res.status(400).json({success:false, message: 'please provide all details' });
+    return res.status(400).json({ success: false, message: 'Please provide all details' });
   }
 
-
-  const newRescuer = new Volunteer(rescuer)
   try {
-     newRescuer.save();   
-        res.status(201).json({ success: true, data: newRescuer });
-  }
-   catch (error) {
+    const newRescuer = await Volunteer.create(rescuer);
+    // ✅ Only return _id like the reference code
+    res.status(200).json({ _id: newRescuer._id });
+  } catch (error) {
     console.error('Error saving rescuer:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
-   }
-
+  }
 });
+
 
 
 
@@ -64,6 +83,17 @@ app.get('/api/rescuers', async (req, res) => {
 });
 
 
+app.get('/api/rescuers/:id', async (req, res) => {
+  try {
+    const rescuer = await Volunteer.findById(req.params.id);
+    if (!rescuer) return res.status(404).json({ message: 'User not found' });
+    res.json(rescuer);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 
 const PORT = process.env.PORT || 5000;
@@ -72,16 +102,3 @@ app.listen(PORT, () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-// // Define routes for your app (e.g., for volunteers)
-// const volunteerRoutes = require('./routes/volunteer');
-// app.use('/api/volunteer', volunteerRoutes);

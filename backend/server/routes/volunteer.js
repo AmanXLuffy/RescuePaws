@@ -5,10 +5,10 @@ const Volunteer = require('../models/Volunteer');
 // POST route to handle volunteer form submission
 router.post('/', async (req, res) => {
   try {
-    const { name, email, area, phone, message } = req.body;
+    const { name, email, area, phone, gender, message } = req.body;
 
     // Basic validation
-    if (!name || !email || !area || !phone || !message) {
+    if (!name || !email || !area || !phone ||!gender || !message) {
       return res.status(400).json({
         success: false,
         error: 'All fields are required.'
