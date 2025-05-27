@@ -66,17 +66,7 @@ const VolunteerForm = () => {
       console.error("Fetch failed:", err);
     }
 
-    // const result = await response.json();
-    //   if (result.success) {
-    //     alert("Thank you for joining RescuePaws!");
-        
-    //   } else {
-    //     alert("Error: " + result.error);
-    //   }
-    // } catch (error) {
-    //   console.error("Error submitting form:", error);
-    //   alert("Submission failed. Please try again later.");
-    // }
+ 
 
   };
 
