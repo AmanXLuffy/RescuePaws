@@ -40,7 +40,7 @@ const Main = () => {
        transition={{duration: 0.7}}
       className="flex flex-col md:flex-row w-full items-center md:h-[300px] border-t border-b border-orange-600 py-10"
       >
-        {/* <Bear /> */}
+        
         <div className="w-full md:w-[500px] border-b  md:border-b-0 md:border-r border-orange-600 pb-4 md:pb-0">
           <p className="text-3xl md:text-5xl text-center font-semibold text-slate-600">OUR MISSION</p>
         </div>
