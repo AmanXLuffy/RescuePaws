@@ -18,23 +18,22 @@
    object-fit: cover;
    position: absolute;
    top: 0px;
-   /* border-radius: 10px; */
-   /* width: 1690px; */
-   height: 96vh;
+   left: 0px;
+   height: 110vh;
    width: 100%;
+   z-index: -1;
 }
 
-@media (max-width: 450px) {
+
+/* @media (max-width: 450px) {
    #upVideo{
       object-fit: cover;
       position: absolute;
       top: 0px;
-      /* border-radius: 10px; */
-      /* width: 1690px; */
-      height: 100vh;
       width: 500px;
+      height: 160dvh;
    }
-}
+} */
 
 /* From Uiverse.io by fthisilak */ 
 .pay-btn {

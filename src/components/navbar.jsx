@@ -88,3 +88,100 @@ const handleResize = () => {
 }
 
 export default Navbar
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { BsX, BsMenuButton } from 'react-icons/bs';
+// import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react';
+// import { GiPlagueDoctorProfile } from "react-icons/gi";
+// import { Link, useLocation } from 'react-router-dom';
+// import logo from '../assets/newLogo.jpg';
+
+// const Navbar = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const location = useLocation();
+
+//   // Auto-close mobile menu on route change
+//   useEffect(() => {
+//     setIsOpen(false);
+//   }, [location]);
+
+//   const toggleMenu = () => {
+//     setIsOpen((prev) => !prev);
+//   };
+
+//   return (
+//     <nav className="fixed top-0 z-50 w-full bg-gray-500 bg-opacity-90 backdrop-blur-lg border-b-2 border-gray-500 text-white px-6 md:px-16 py-4 flex items-center justify-between">
+//       <a href="/">
+//         <img
+//           src={logo}
+//           alt="Logo"
+//           className="h-12 md:h-16 md:w-20 shrink-0 mix-blend-color-burn opacity-80 hover:opacity-100 transition duration-300"
+//         />
+//       </a>
+
+//       <a
+//         href="/"
+//         className="bg-gradient-to-r from-orange-200 to-yellow-300 bg-clip-text text-transparent opacity-80 text-2xl md:text-3xl font-semibold hover:opacity-100 transition duration-300"
+//       >
+//         RescuePaws
+//       </a>
+
+//       {/* Desktop Nav */}
+//       <ul className="hidden md:flex gap-8 text-sm md:text-lg">
+//         <Link className="hover:opacity-100 opacity-80 transition" to="/">Home</Link>
+//         <Link className="hover:opacity-100 opacity-80 transition" to="/rescue">Rescue</Link>
+//         <Link className="hover:opacity-100 opacity-80 transition" to="/tips">AnimalsFacts</Link>
+//         <Link className="hover:opacity-100 opacity-80 transition" to="/contact">Joinus</Link>
+
+//         <SignedOut>
+//           <Link className="hover:opacity-100 opacity-80 transition" to="/activity">Signin</Link>
+//         </SignedOut>
+
+//         <SignedIn>
+//           <SignOutButton />
+//           <Link
+//             to="/profile"
+//             className="text-3xl text-green-400 opacity-80 hover:opacity-100 hover:scale-125 transition"
+//           >
+//             <GiPlagueDoctorProfile />
+//           </Link>
+//         </SignedIn>
+//       </ul>
+
+//       {/* Mobile Menu Button */}
+//       <div className="md:hidden text-3xl cursor-pointer">
+//         {isOpen ? <BsX onClick={toggleMenu} /> : <BsMenuButton onClick={toggleMenu} />}
+//       </div>
+
+//       {/* Mobile Menu */}
+//       {isOpen && (
+//         <div className="absolute top-[72px] right-0 w-[180px] bg-gray-400 shadow-lg rounded-bl-xl border-l-2 border-gray-500 p-6 md:hidden z-40">
+//           <ul className="flex flex-col gap-4 text-black">
+//             <Link to="/" className="hover:opacity-100 opacity-80 transition">Home</Link>
+//             <Link to="/rescue" className="hover:opacity-100 opacity-80 transition">Rescue</Link>
+//             <Link to="/tips" className="hover:opacity-100 opacity-80 transition">AnimalFacts</Link>
+//             <Link to="/contact" className="hover:opacity-100 opacity-80 transition">Joinus</Link>
+
+//             <SignedOut>
+//               <Link to="/activity" className="hover:opacity-100 opacity-80 transition">Signup</Link>
+//             </SignedOut>
+
+//             <SignedIn>
+//               <SignOutButton />
+//               <Link
+//                 to="/profile"
+//                 className="text-3xl text-green-400 hover:opacity-100 hover:scale-125 transition"
+//               >
+//                 <GiPlagueDoctorProfile />
+//               </Link>
+//             </SignedIn>
+//           </ul>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
+
+// export default Navbar;

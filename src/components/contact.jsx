@@ -73,7 +73,7 @@ const VolunteerForm = () => {
   return (
     <div>
       <Navbar />
-      <div className="w-full flex flex-col md:flex-row md:h-[700px] h-screen relative items-center">
+      <div className="w-full flex flex-col md:flex-row md:h-[800px] h-screen relative items-center">
         <video
           autoPlay
           muted
@@ -88,6 +88,7 @@ const VolunteerForm = () => {
           className="flex border-2 border-gray-600 rounded-lg h-auto md:h-[500px] w-[90%] max-w-[400px] max-h-[500px] flex-col justify-center max-md:top-0 md:top-20 absolute md:left-[950px] items-center bg-gray-300 p-4"
           onSubmit={handleSubmit}
         >
+        
           <label className="text-2xl text-gray-700">Name</label>
           <input
             className="w-full h-[60px] text-black border-2 border-black rounded-lg mb-2 px-2"
@@ -175,16 +176,149 @@ const VolunteerForm = () => {
           </button>
         </form>
 
-        <p className="absolute flex text-xl top-[460px] left-1/3 transform -translate-x-1/2 text-white w-[90%] max-md:left-72 max-w-[500px]">
+        {/* <div className="absolute flex text-xl top-[460px] left-1/3 transform -translate-x-1/2 text-white w-[90%] max-md:left-72 max-w-[500px]"> */}
+        <div className="absolute flex w-[90%] md:top-[600px] md:left-[900px] max-md:top-[500px] max-w-[550px]">
+
+        <p className="text-xl text-white max-md:text-sm max-md:leading-6 leading-8">
           "22 years of caring for the abandoned and less fortunate animals,
           RescuePaws is Godsent for the paraplegic, diseased, and abused
           animals—nurturing them and nursing them to a life of love, care, and
           dignity that every life deserves." - Shilpa Doshi
         </p>
+        </div>
       </div>
       <Footer />
     </div>
+
+
+
+//     <div>
+//   <Navbar />
+//   <div className="relative w-full h-auto min-h-screen flex items-center justify-center overflow-hidden">
+//     <video
+//       autoPlay
+//       muted
+//       loop
+//       className="absolute inset-0 w-full h-full object-cover"
+//       id="upVideo"
+//     >
+//       <source src={joinVideo} type="video/mp4" />
+//     </video>
+
+//     <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 py-10">
+//       <form
+//         className="flex border-2 border-gray-600 rounded-lg w-full max-w-[400px] flex-col justify-center items-center bg-gray-300 p-4"
+//         onSubmit={handleSubmit}
+//       >
+//         <label className="text-2xl text-gray-700">Name</label>
+//         <input
+//           className="w-full h-[60px] text-black border-2 border-black rounded-lg mb-2 px-2"
+//           type="text"
+//           name="name"
+//           placeholder="Name"
+//           value={formData.name}
+//           onChange={handleChange}
+//           required
+//         />
+
+//         <label className="text-2xl text-slate-600">Email</label>
+//         <input
+//           className="w-full h-[60px] text-black border-2 border-black rounded-lg mb-2 px-2"
+//           type="email"
+//           name="email"
+//           placeholder="Email"
+//           value={formData.email}
+//           onChange={handleChange}
+//           required
+//         />
+
+//         <label className="text-2xl text-slate-600">Area</label>
+//         <input
+//           className="w-full h-[60px] text-black border-2 border-black rounded-lg mb-2 px-2"
+//           type="text"
+//           name="area"
+//           placeholder="Area"
+//           value={formData.area}
+//           onChange={handleChange}
+//           required
+//         />
+
+//         <label className="text-2xl text-slate-600">Phone</label>
+//         <input
+//           className="w-full h-[60px] text-black border-2 border-black rounded-lg mb-2 px-2"
+//           type="text"
+//           name="phone"
+//           placeholder="Phone"
+//           value={formData.phone}
+//           onChange={handleChange}
+//           required
+//         />
+
+//         <label className="text-2xl text-slate-600 mb-2 block">Gender</label>
+//         <div className="flex gap-6 justify-center mb-4 border-2 border-black bg-white rounded-lg px-2 w-full h-[60px]">
+//           <label className="flex items-center gap-2">
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="male"
+//               checked={formData.gender === "male"}
+//               onChange={handleChange}
+//               required
+//             />
+//             Male
+//           </label>
+
+//           <label className="flex items-center gap-2">
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="female"
+//               checked={formData.gender === "female"}
+//               onChange={handleChange}
+//               required
+//             />
+//             Female
+//           </label>
+//         </div>
+
+//         <label className="text-2xl text-slate-600">Message</label>
+//         <textarea
+//           className="w-full h-[200px] text-black border-2 border-black rounded-lg mb-2 px-2"
+//           name="message"
+//           placeholder="Your Message"
+//           value={formData.message}
+//           onChange={handleChange}
+//           required
+//         />
+
+//         <button
+//           className="w-[100px] h-[30px] bg-blue-500 text-white rounded-lg"
+//           type="submit"
+//         >
+//           Send
+//         </button>
+//       </form>
+
+//       <div className="mt-8 w-full max-w-[550px] text-white text-center px-4">
+//         <p className="text-xl max-md:text-sm max-md:leading-6 leading-8">
+//           "22 years of caring for the abandoned and less fortunate animals,
+//           RescuePaws is Godsent for the paraplegic, diseased, and abused
+//           animals—nurturing them and nursing them to a life of love, care, and
+//           dignity that every life deserves." - Shilpa Doshi
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+//   <Footer />
+// </div>
+
+
+
+
   );
 };
 
 export default VolunteerForm;
+
+
+
