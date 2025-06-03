@@ -26,7 +26,6 @@
     "dev": "nodemon backend/server/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "go" : "node server.js",
     "eject": "react-scripts eject",
     "proxy": "http://localhost"
   },
