@@ -56,6 +56,9 @@ app.post('/api/rescuers', async (req, res) => {
 });
 
 
+app.get("/", (req, res) => {
+  res.send("RescuePaws backend is running!");
+});
 
 
 
