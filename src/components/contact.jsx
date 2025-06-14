@@ -22,7 +22,8 @@ const VolunteerForm = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/rescuers", {
+      // const res = await fetch("http://localhost:5000/api/rescuers", {
+      const res = await fetch("https://rescue-paws.onrender.com/api/rescuers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
