@@ -234,7 +234,7 @@ const VolunteerForm = () => {
         </video>
 
         {/* Overlay Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen bg-black/50 px-4 py-10">
+        <div className="relative z-9 flex flex-col items-center justify-center min-h-screen bg-black/50 px-4 py-10">
           {/* Form */}
           <div className="w-full flex justify-center">
             <form
