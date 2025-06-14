@@ -25,15 +25,17 @@
 }
 
 
-/* @media (max-width: 450px) {
+ @media (max-width: 450px) {
    #upVideo{
       object-fit: cover;
       position: absolute;
       top: 0px;
       width: 500px;
-      height: 160dvh;
+      height: 180dvh;
    }
-} */
+} 
+
+
 
 /* From Uiverse.io by fthisilak */ 
 .pay-btn {
