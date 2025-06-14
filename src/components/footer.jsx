@@ -18,7 +18,7 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="flex flex-col items-center sm:items-center md:items-start">
           <p className="text-xl font-semibold mb-2">Pages</p>
-          <ul className="space-y-1">
+          <ul className="space-y-2 flex flex-col text-sm sm">
             <Link className="cursor-pointer opacity-80 transition hover:underline hover:opacity-100" to="/">Home</Link>
             <Link className="cursor-pointer opacity-80 transition hover:underline hover:opacity-100" to="/rescue">Rescue</Link>
             <Link className="cursor-pointer opacity-80 transition hover:underline hover:opacity-100" to="/tips">AnimalFacts</Link>
