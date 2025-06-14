@@ -6,7 +6,8 @@ const RescuersList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/rescuers")
+    // fetch("http://localhost:5000/api/rescuers")
+    fetch("https://rescue-paws.onrender.com")
       .then((response) => response.json())
       .then((data) => {
         setRescuers(data);
