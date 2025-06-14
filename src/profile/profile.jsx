@@ -103,7 +103,8 @@ const ProfileCard = () => {
       }
 
       try {
-        const res = await fetch(`http://localhost:5000/api/rescuers/${userId}`);
+        // const res = await fetch(`http://localhost:5000/api/rescuers/${userId}`);
+        const res = await fetch(`https://rescue-paws.onrender.com/api/rescuers/${userId}`);
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         setUserData(data);
