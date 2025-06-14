@@ -7,7 +7,7 @@ const RescuersList = () => {
 
   useEffect(() => {
     // fetch("http://localhost:5000/api/rescuers")
-    fetch("https://rescue-paws.onrender.com")
+    fetch("https://rescue-paws.onrender.com/api/rescuers")
       .then((response) => response.json())
       .then((data) => {
         setRescuers(data);
