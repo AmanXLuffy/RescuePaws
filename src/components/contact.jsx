@@ -223,24 +223,28 @@ const VolunteerForm = () => {
     <div>
       <Navbar />
       <div className="relative w-full min-h-screen">
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
+        
+
+        <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover z-0">
           <source src={joinVideo} type="video/mp4" />
         </video>
 
-        {/* Overlay Content */}
-        <div className="relative z-9 flex flex-col items-center justify-center min-h-screen bg-black/50 px-4 py-10">
-          {/* Form */}
-          <div className="w-full flex justify-center">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-gray-100 rounded-lg shadow-md p-6 w-full max-w-lg md:ml-16"
-            >
+
+        <div className="relative z-9 flex max-md:flex-col gap-5 md:flex-row items-center justify-center min-h-screen bg-black/50 px-4 py-10">
+
+
+          <div className="w-[90px]"></div>
+
+
+          <p className="text-white text-sm sm:text-base mt-6 max-w-xl text-center leading-relaxed">
+            "Years of caring for the abandoned and less fortunate animals, RescuePaws is
+            godsent for the paraplegic, diseased, and abused animals—nurturing them and nursing
+            them to a life of love, care, and dignity that every life deserves." - Shilpa Doshi
+          </p>
+
+          
+          <div className="w-full flex flex-col md:flex-row justify-center ">
+            <form onSubmit={handleSubmit} className="bg-gray-100 rounded-lg shadow-md p-6 w-full max-w-lg md:ml-16" >
               <h2 className="text-2xl font-bold text-center text-gray-700 mb-4">Join Us</h2>
 
               {["Name", "Email", "Area", "Phone"].map((field) => (
@@ -294,12 +298,13 @@ const VolunteerForm = () => {
             </form>
           </div>
 
-          {/* Quote Text Below Form */}
-          <p className="text-white text-sm sm:text-base mt-6 max-w-xl text-center leading-relaxed">
+
+          
+          {/* <p className="text-white text-sm sm:text-base mt-6 max-w-xl text-center leading-relaxed">
             "22 years of caring for the abandoned and less fortunate animals, RescuePaws is
             Godsent for the paraplegic, diseased, and abused animals—nurturing them and nursing
             them to a life of love, care, and dignity that every life deserves." - Shilpa Doshi
-          </p>
+          </p> */}
         </div>
       </div>
       <Footer />

@@ -16,9 +16,10 @@
 
 #upVideo{
    object-fit: cover;
-   position: absolute;
+   position: relative;
    top: 0px;
-   left: 0px;
+   left: 100px;
+
    height: 110vh;
    width: 100%;
    z-index: -1;
@@ -29,9 +30,9 @@
    #upVideo{
       object-fit: cover;
       position: absolute;
-      top: 0px;
+      top: 10px;
       width: 500px;
-      height: 180dvh;
+      height: 280dvh;
    }
 } 
 
