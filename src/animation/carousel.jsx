@@ -14,7 +14,7 @@ const Carousel = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); // Change image every 5 seconds
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div className="relative w-full overflow-hidden rounded-lg">
