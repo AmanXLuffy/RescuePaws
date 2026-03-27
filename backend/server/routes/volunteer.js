@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Volunteer = require('../models/Volunteer');  
 
-// POST route to handle volunteer form submission
+
 router.post('/', async (req, res) => {
   try {
     const { name, email, area, phone, gender, message } = req.body;
 
-    // Basic validation
+    
     if (!name || !email || !area || !phone ||!gender || !message) {
       return res.status(400).json({
         success: false,
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // General error
+    
     res.status(500).json({
       success: false,
       error: 'Something went wrong. Please try again later.'
